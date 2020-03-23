@@ -48,9 +48,10 @@ class Song
     @@all.detect do |song|
       song.name == name
     end
-    if @@all.include?(song)
-      song.name
   end
+  
+  def self.find_or_create_by_name
+    
       
 
 end
