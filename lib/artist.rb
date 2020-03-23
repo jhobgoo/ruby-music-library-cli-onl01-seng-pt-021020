@@ -32,7 +32,7 @@ class Artist
   end
   
   def add_song(song)
-    song = Artist.new(self)
+    song = song.include?(artist)
     
     
   
