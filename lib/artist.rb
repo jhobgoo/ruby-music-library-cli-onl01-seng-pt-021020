@@ -31,7 +31,9 @@ class Artist
     @songs
   end
   
-  def add_song
+  def add_song(artist)
+    song = Artist.new(self)
+    
     
   
 end
