@@ -41,6 +41,6 @@ class Artist
   end
   
   def genres
-    
+    genre = Artist.songs(genre)
   
 end
