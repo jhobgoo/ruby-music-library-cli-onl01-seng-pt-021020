@@ -37,8 +37,8 @@ class Artist
       song.artist = self
     end
     
-    if !@song.include?(song)
-      @song << self
+    if !@songs.include?(song)
+      @songs << self
     end
     
   end
