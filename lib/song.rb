@@ -48,6 +48,7 @@ class Song
     @@all.detect do |song|
       song.name == name
     end
+    song.name
   end
       
 
