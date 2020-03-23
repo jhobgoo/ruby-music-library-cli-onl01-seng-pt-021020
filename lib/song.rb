@@ -24,6 +24,7 @@ class Song
     if !@genre.include?(genre)
       @genre << genre  
     end
+  end
   
   def self.all
     @@all
