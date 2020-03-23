@@ -8,6 +8,7 @@ class Song
     @name = name
     if artist != nil
       self.artist = artist
+    end
   end
   
   def artist=(artist)
