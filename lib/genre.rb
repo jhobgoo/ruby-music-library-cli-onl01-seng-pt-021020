@@ -26,5 +26,9 @@ class Genre
     genre.save
     genre
   end
+  
+  def songs
+    @songs
+  end
 
 end
