@@ -41,19 +41,19 @@ class MusicLibraryController
   end
 
   def list_songs
-    Song.all.sort do |a, b| a.name <=> b.name }.each.with_index(1) do |s, i|
-      puts "#{i}. #{s.artist.name} - #{s.name} - #{s.genre.name}"
+    Song.all.sort {|name1, name2| name1.name <=> name2.name}.each.with_index(1) do |song, index|
+      puts "#{index}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
     end
   end
 
   def list_artists
-    Artist.all.sort{ |a, b| a.name <=> b.name }.each.with_index(1) do |a, i|
-      puts "#{i}. #{a.name}"
+    Artist.all.sort {|artist1, artist2| artist1.name <=> artist2.name}.each.with_index(1) do |artist, index|
+      puts "#{index}. #{artist.name}"
     end
   end
 
   def list_genres
-    Genre.all.sort{ |a, b| a.name <=> b.name }.each.with_index(1) do |g, i|
+    Genre.all.sort{ |genre1, genre2| genre1.name <=> genre2.name }.each.with_index(1) do |g, i|
       puts "#{i}. #{g.name}"
     end
   end
@@ -63,8 +63,8 @@ class MusicLibraryController
     input = gets.strip
 
     if artist = Artist.find_by_name(input)
-      artist.songs.sort{ |a, b| a.name <=> b.name }.each.with_index(1) do |s, i|
-        puts "#{i}. #{s.name} - #{s.genre.name}"
+      artist.songs.sort{ |artist1, artist2| artist1.name <=> artist2.name }.each.with_index(1) do |song, index|
+        puts "#{index}. #{song.name} - #{song.genre.name}"
       end
     end
   end
@@ -74,8 +74,8 @@ class MusicLibraryController
     input = gets.strip
 
     if genre = Genre.find_by_name(input)
-      genre.songs.sort{ |a, b| a.name <=> b.name }.each.with_index(1) do |s, i|
-        puts "#{i}. #{s.artist.name} - #{s.name}"
+      genre.songs.sort{ |genre1, genre2| genre1.name <=> genre2.name }.each.with_index(1) do |song, index|
+        puts "#{index}. #{song.artist.name} - #{song.name}"
       end
     end
   end
@@ -85,7 +85,7 @@ class MusicLibraryController
 
     input = gets.strip.to_i
     if (1..Song.all.length).include?(input)
-      song = Song.all.sort{ |a, b| a.name <=> b.name }[input - 1]
+      song = Song.all.sort{ |song1, song2| song1.name <=> song2.name }[input - 1]
     end
 
     puts "Playing #{song.name} by #{song.artist.name}" if song
