@@ -45,7 +45,8 @@ class Song
   end
   
   def self.find_by_name
-    songs.each do |self|
+    songs.each do |name|
+      song.name = self
       
 
 end
