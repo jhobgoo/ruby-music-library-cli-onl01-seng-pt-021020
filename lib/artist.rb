@@ -1,5 +1,5 @@
 class Artist
-  extends 
+  extends Concerns::Findable
   attr_accessor :name
 
   @@all = []
