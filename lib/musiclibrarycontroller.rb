@@ -7,7 +7,7 @@ class MusicLibraryController
   end
   
   def call
-     def call
+    
     input = ""
 
     while input != "exit"
@@ -24,24 +24,24 @@ class MusicLibraryController
       input = gets.strip
 
       case input
-      when "list songs"
-        list_songs
-      when "list artists"
-        list_artists
-      when "list genres"
-        list_genres
-      when "list artist"
-        list_songs_by_artist
-      when "list genre"
-        list_songs_by_genre
-      when "play song"
-        play_song
+        when "list songs"
+          list_songs
+        when "list artists"
+          list_artists
+        when "list genres"
+          list_genres
+        when "list artist"
+          list_songs_by_artist
+        when "list genre"
+          list_songs_by_genre
+        when "play song"
+          play_song
+        end
       end
-    end
   end
 
   def list_songs
-    Song.all.sort{ |a, b| a.name <=> b.name }.each.with_index(1) do |s, i|
+    Song.all.sort do |a, b| a.name <=> b.name }.each.with_index(1) do |s, i|
       puts "#{i}. #{s.artist.name} - #{s.name} - #{s.genre.name}"
     end
   end
@@ -92,4 +92,3 @@ class MusicLibraryController
   end
 end
   
-end
