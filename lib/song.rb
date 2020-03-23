@@ -69,6 +69,8 @@ class Song
   
   def self.create_from_filename
     new_from_filename(name).tap do |song|
-      
+      song.save
+    end
+  end
   
 end
