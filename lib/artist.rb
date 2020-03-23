@@ -1,5 +1,5 @@
 class Artist
-  
+  extends 
   attr_accessor :name
 
   @@all = []
