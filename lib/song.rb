@@ -48,7 +48,8 @@ class Song
     @@all.detect do |song|
       song.name == name
     end
-    song.name
+    if @@all.include?(song)
+      song.name
   end
       
 
