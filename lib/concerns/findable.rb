@@ -7,5 +7,6 @@ module Concerns::Findable
         song.name == name
       end
     end
+  end
   
 end
