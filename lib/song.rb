@@ -68,6 +68,7 @@ class Song
   end
   
   def self.create_from_filename
-    
+    new_from_filename(name).tap do |song|
+      
   
 end
