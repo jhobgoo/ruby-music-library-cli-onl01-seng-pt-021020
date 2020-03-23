@@ -45,11 +45,7 @@ class Song
   end
   
   def self.find_by_name(name)
-    @@all.detect do |song|
-      song.name == name
-    end
-    if @@all.include?(song)
-      song.name
+    all.detect{ |s| s.name == name }
   end
       
 
